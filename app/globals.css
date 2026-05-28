@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(160, 33%, 97%);
+  --foreground: hsl(193, 35%, 21%);
+  --card: hsl(0, 0%, 100%);
+  --primary: hsl(185, 58%, 45%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(160, 45%, 94%);
+  --muted-foreground: hsl(193, 25%, 42%);
+  --border: hsl(185, 20%, 88%);
+  --teal: #2aa3b5;
+  --teal-dark: #1f7f8e;
+  --teal-light: #e5f5ef;
+  --dark: #1d3d4a;
+  --mint-bg: #f2faf7;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--mint-bg);
+    color: var(--dark);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-montserrat), system-ui, sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--dark);
+  }
+  ::selection {
+    background-color: var(--teal);
+    color: white;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-teal-400;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-teal-500 hover:border-teal-600 text-teal-600 hover:text-teal-700 font-bold px-7 py-3.5 rounded-full transition-all duration-300 hover:bg-teal-50 hover:scale-105 active:scale-95;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-dark/70 hover:text-teal-600 font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:bg-teal-50;
+  }
+  .btn-primary-dark {
+    @apply inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white font-bold px-7 py-3.5 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95;
+  }
+  .btn-outline-dark {
+    @apply inline-flex items-center gap-2 border-2 border-white/80 hover:border-white text-white font-bold px-7 py-3.5 rounded-full transition-all duration-300 hover:bg-white/10 hover:scale-105 active:scale-95;
+  }
+  .section-label {
+    @apply inline-block text-teal-500 font-bold text-xs tracking-widest uppercase mb-2;
+  }
+  .section-title {
+    @apply font-heading text-4xl md:text-5xl font-black leading-tight text-dark;
+  }
+  .card-light {
+    @apply bg-white border border-[hsl(185,20%,88%)] rounded-2xl shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+  .card-glass {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl transition-all duration-300;
+  }
+  .container-section {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-divider {
+    @apply w-16 h-1 bg-teal-500 rounded-full my-4;
+  }
+  .bg-muted {
+    background-color: hsl(160, 45%, 94%);
+  }
+  .bg-primary {
+    background-color: var(--teal);
+  }
+  .text-primary {
+    color: var(--teal);
+  }
+}
+
+@layer utilities {
+  .text-shadow-lg {
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--mint-bg); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--teal-dark); }
+
+*:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+img { transition: opacity 0.3s ease; }
