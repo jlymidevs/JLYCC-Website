@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { Heart, Building2, Handshake, ArrowRight, Shield, CheckCircle } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const tiers = [
   {
@@ -38,92 +37,93 @@ const tiers = [
 ];
 
 export default function Donate() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
   return (
     <section id="donate" className="py-24 relative overflow-hidden" aria-labelledby="donate-heading">
-      <div className="container-section" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-5"
-        >
-          <span className="section-label">Partner With Us</span>
-          <div className="flex justify-center"><div className="section-divider" /></div>
-          <h2 id="donate-heading" className="section-title mt-2">
-            Support Our <span className="text-teal-500 dark:text-teal-400">Non-Profit Mission</span>
-          </h2>
-          <p className="text-white/70 text-lg mt-5 max-w-2xl mx-auto">
-            Jesus Loves You Ministries, Inc. operates as a registered non-profit organization. We rely on the faithful partnership of believers to fund scholarships, expand our facilities, and send missionaries worldwide.
-          </p>
-        </motion.div>
+      <div className="container-section">
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-6 mb-14"
-        >
-          {[
-            { icon: Shield, label: "Secure giving" },
-            { icon: CheckCircle, label: "SEC-registered non-profit" },
-            { icon: CheckCircle, label: "All proceeds support ministry outreach & community care" },
-          ].map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-2 text-white/60 text-sm font-semibold">
-              <Icon size={15} className="text-teal-500" />
-              {label}
-            </div>
-          ))}
-        </motion.div>
+        {/* Header */}
+        <ScrollReveal direction="up" blur offset={["start 0.9", "start 0.5"]}>
+          <div className="text-center mb-5">
+            <span className="section-label">Partner With Us</span>
+            <div className="flex justify-center"><div className="section-divider" /></div>
+            <h2 id="donate-heading" className="section-title mt-2">
+              Support Our <span className="text-teal-500 dark:text-teal-400">Non-Profit Mission</span>
+            </h2>
+            <p className="text-white/70 text-lg mt-5 max-w-2xl mx-auto">
+              Jesus Loves You Ministries, Inc. operates as a registered non-profit organization. We rely on the faithful partnership of believers to fund scholarships, expand our facilities, and send missionaries worldwide.
+            </p>
+          </div>
+        </ScrollReveal>
 
+        {/* Trust badges */}
+        <ScrollReveal direction="up" offset={["start 0.85", "start 0.5"]}>
+          <div className="flex flex-wrap justify-center gap-6 mb-14">
+            {[
+              { icon: Shield, label: "Secure giving" },
+              { icon: CheckCircle, label: "SEC-registered non-profit" },
+              { icon: CheckCircle, label: "All proceeds support ministry outreach & community care" },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="flex items-center gap-2 text-white/60 text-sm font-semibold">
+                <Icon size={15} className="text-teal-500" />
+                {label}
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
+
+        {/* Tier cards — staggered */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           {tiers.map((tier, i) => {
             const Icon = tier.icon;
             return (
-              <motion.div
+              <ScrollReveal
                 key={tier.title}
-                initial={{ opacity: 0, y: 40 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 + i * 0.12 }}
-                className={`relative group rounded-2xl border-2 ${tier.border} p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${tier.highlight ? "bg-teal-500 text-white" : "bg-white dark:bg-gray-800"}`}
+                direction="up"
+                distance={60}
+                blur
+                scale
+                offset={[`start ${0.88 - i * 0.05}`, "start 0.2"]}
               >
-                {tier.highlight && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-teal-600 text-xs font-black px-4 py-1 rounded-full uppercase tracking-widest shadow">
-                    Most Popular
-                  </div>
-                )}
-                <div className={`w-14 h-14 ${tier.highlight ? "bg-white/20" : tier.bg} rounded-2xl flex items-center justify-center mb-6`}>
-                  <Icon size={26} className={tier.highlight ? "text-white" : tier.color} />
-                </div>
-                <h3 className={`font-heading text-xl font-black mb-4 ${tier.highlight ? "text-white" : "text-dark dark:text-white"}`}>{tier.title}</h3>
-                <p className={`text-sm leading-relaxed mb-8 ${tier.highlight ? "text-white/80" : "text-white/70"}`}>{tier.desc}</p>
-                <a
-                  href="#stay-updated"
-                  className={`w-full flex items-center justify-center gap-2 font-bold text-sm py-3 px-5 rounded-xl transition-all ${tier.btnClass}`}
+                <div
+                  className={`relative group rounded-2xl border-2 ${tier.border} p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl h-full ${
+                    tier.highlight ? "bg-teal-500 text-white" : "bg-white dark:bg-gray-800"
+                  }`}
                 >
-                  Give Now <ArrowRight size={14} />
-                </a>
-              </motion.div>
+                  {tier.highlight && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-white text-teal-600 text-xs font-black px-4 py-1 rounded-full uppercase tracking-widest shadow">
+                      Most Popular
+                    </div>
+                  )}
+                  <div className={`w-14 h-14 ${tier.highlight ? "bg-white/20" : tier.bg} rounded-2xl flex items-center justify-center mb-6`}>
+                    <Icon size={26} className={tier.highlight ? "text-white" : tier.color} />
+                  </div>
+                  <h3 className={`font-heading text-xl font-black mb-4 ${tier.highlight ? "text-white" : "text-dark dark:text-white"}`}>{tier.title}</h3>
+                  <p className={`text-sm leading-relaxed mb-8 ${tier.highlight ? "text-white/80" : "text-white/70"}`}>{tier.desc}</p>
+                  <a
+                    href="#stay-updated"
+                    className={`w-full flex items-center justify-center gap-2 font-bold text-sm py-3 px-5 rounded-xl transition-all ${tier.btnClass}`}
+                  >
+                    Give Now <ArrowRight size={14} />
+                  </a>
+                </div>
+              </ScrollReveal>
             );
           })}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-center"
-        >
-          <a href="#stay-updated" className="btn-primary text-lg px-10 py-4 group">
-            MAKE A DONATION
-            <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-          </a>
-          <p className="text-white/50 text-sm mt-4">
-            All donations directed to our SEC-registered non-profit.
-          </p>
-        </motion.div>
+        {/* CTA */}
+        <ScrollReveal direction="up" offset={["start 0.85", "start 0.5"]}>
+          <div className="text-center">
+            <a href="#stay-updated" className="btn-primary text-lg px-10 py-4 group">
+              MAKE A DONATION
+              <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
+            </a>
+            <p className="text-white/50 text-sm mt-4">
+              All donations directed to our SEC-registered non-profit.
+            </p>
+          </div>
+        </ScrollReveal>
+
       </div>
     </section>
   );

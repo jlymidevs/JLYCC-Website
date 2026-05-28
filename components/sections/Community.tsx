@@ -1,8 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const ministries = [
   {
@@ -36,56 +35,53 @@ const ministries = [
 ];
 
 export default function Community() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
   return (
     <section id="community" className="py-24 relative overflow-hidden" aria-labelledby="community-heading">
-      <div className="container-section" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-14"
-        >
-          <span className="section-label">Our Ministries</span>
-          <div className="flex justify-center"><div className="section-divider" /></div>
-          <h2 id="community-heading" className="section-title mt-2">
-            Follow <span className="text-teal-500 dark:text-teal-400">Us</span>
-          </h2>
-          <p className="text-white/70 text-lg mt-4 max-w-2xl mx-auto">
-            Follow us on our platforms and stay plugged into the life of the church — from anywhere in the world.
-          </p>
-        </motion.div>
+      <div className="container-section">
 
+        {/* Header */}
+        <ScrollReveal direction="up" blur offset={["start 0.9", "start 0.5"]}>
+          <div className="text-center mb-14">
+            <span className="section-label">Our Ministries</span>
+            <div className="flex justify-center"><div className="section-divider" /></div>
+            <h2 id="community-heading" className="section-title mt-2">
+              Follow <span className="text-teal-500 dark:text-teal-400">Us</span>
+            </h2>
+            <p className="text-white/70 text-lg mt-4 max-w-2xl mx-auto">
+              Follow us on our platforms and stay plugged into the life of the church — from anywhere in the world.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        {/* Cards — staggered */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {ministries.map((m, i) => (
-            <motion.div
+            <ScrollReveal
               key={m.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="card-light rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 group"
+              direction="up"
+              distance={50}
+              blur
+              scale
+              offset={[`start ${0.9 - i * 0.04}`, "start 0.2"]}
             >
-              <div className="h-40 overflow-hidden">
-                <img src={m.img} alt={m.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div className="card-light rounded-2xl overflow-hidden hover:-translate-y-1 transition-all duration-300 group h-full">
+                <div className="h-40 overflow-hidden">
+                  <img src={m.img} alt={m.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-heading font-black text-dark dark:text-white text-base">{m.name}</h3>
+                  <p className="text-teal-500 dark:text-teal-400 text-xs font-bold mb-2">{m.sub}</p>
+                  <p className="text-white/70 text-sm leading-relaxed mb-4">{m.desc}</p>
+                  <a href={m.href} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors">
+                    Facebook <ExternalLink size={11} />
+                  </a>
+                </div>
               </div>
-              <div className="p-5">
-                <h3 className="font-heading font-black text-dark dark:text-white text-base">{m.name}</h3>
-                <p className="text-teal-500 dark:text-teal-400 text-xs font-bold mb-2">{m.sub}</p>
-                <p className="text-white/70 text-sm leading-relaxed mb-4">{m.desc}</p>
-                <a
-                  href={m.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors"
-                >
-                  Facebook <ExternalLink size={11} />
-                </a>
-              </div>
-            </motion.div>
+            </ScrollReveal>
           ))}
         </div>
+
       </div>
     </section>
   );

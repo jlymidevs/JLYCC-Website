@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const features = [
   { title: "NON-PROFIT MINISTRY", desc: "SEC Reg No: ******44", icon: "🛡️" },
@@ -12,22 +12,13 @@ const features = [
 ];
 
 export default function About() {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.15 });
-
   return (
     <section id="about" className="py-24 relative overflow-hidden" aria-labelledby="about-heading">
-
       <div className="container-section">
-        <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50, filter: "blur(12px)" }}
-            animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}}
-            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            style={{ willChange: "transform, opacity, filter" }}
-            className="relative"
-          >
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+          {/* Image — slides from left */}
+          <ScrollReveal direction="left" distance={60} blur>
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <img
                 src="https://assets.cdn.filesafe.space/DiD7LkE8KQEe9zWMUJl5/media/6a18415e3e043d8258ebb19a.jpg"
@@ -50,15 +41,10 @@ export default function About() {
               <div className="text-base font-heading font-black">NON-PROFIT MINISTRY</div>
               <div className="text-teal-100 text-xs font-semibold mt-0.5">SEC Registered</div>
             </motion.div>
-          </motion.div>
+          </ScrollReveal>
 
-          {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, x: 50, filter: "blur(12px)" }}
-            animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}}
-            transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            style={{ willChange: "transform, opacity, filter" }}
-          >
+          {/* Text — slides from right */}
+          <ScrollReveal direction="right" distance={60} blur>
             <span className="inline-block text-xs font-black tracking-widest uppercase text-teal-400 border border-teal-500/40 bg-teal-500/10 rounded-full px-4 py-1.5 mb-4">
               ABOUT THE MINISTRY
             </span>
@@ -69,7 +55,7 @@ export default function About() {
               Jesus Loves You Ministries, Inc. is a registered non-stock, non-profit Christian Corporation dedicated to religious Christian activities. Since our founding on February 23, 1983, we have been committed to building a legacy of spiritual authority and leadership training for kingdom impact.
             </p>
             <p className="text-white/50 leading-relaxed mb-10">
-              We emphasize rigorous spiritual formation combined with practical leadership. We don't just educate; we forge nation influencers and spiritual generals equipped to take on the darkest territories.
+              We emphasize rigorous spiritual formation combined with practical leadership. We don&apos;t just educate; we forge nation influencers and spiritual generals equipped to take on the darkest territories.
             </p>
 
             <div className="border-t border-white/10 pt-8 mb-10">
@@ -92,7 +78,8 @@ export default function About() {
               NEWS AND EVENTS
               <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
             </a>
-          </motion.div>
+          </ScrollReveal>
+
         </div>
       </div>
     </section>
