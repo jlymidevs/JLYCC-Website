@@ -10,8 +10,8 @@ const pillars = [
     quote: '"Loving God causes us to WORSHIP Him"',
     desc: "Worship is not a destination but a journey - deepening as we grow in our knowledge and experience of God.",
     features: ["Ministerial service in the temple"],
-    icon: "pray",
     featured: false,
+    icon: "🙏",
   },
   {
     label: "EAGLES NETWORK",
@@ -20,7 +20,7 @@ const pillars = [
     desc: "Generational Discipleship. Focused on raising up the next generation of leaders through HeartLink, ISU, and Children's ministries.",
     features: ["HeartLink", "ISU", "Children's ministries"],
     featured: true,
-    icon: "eagle",
+    icon: "🦅",
   },
   {
     label: "AMEN / LEADTAKERS",
@@ -28,16 +28,10 @@ const pillars = [
     quote: '"Loving the world causes us to do MISSIONS"',
     desc: "Evangelism & Missions. Focused on reaching the 7 Mountains of Society and expanding our territory globally.",
     features: ["Reaching the 7 Mountains of Society"],
-    icon: "globe",
     featured: false,
+    icon: "🌍",
   },
 ];
-
-const iconMap: Record<string, string> = {
-  pray: "🙏",
-  eagle: "🦅",
-  globe: "🌍",
-};
 
 export default function Pillars() {
   const ref = useRef(null);
@@ -78,7 +72,7 @@ export default function Pillars() {
                   : "border-teal-200 dark:border-teal-700 bg-teal-50/60 dark:bg-gray-800/60"
               }`}
             >
-              <div className="text-4xl mb-4">{iconMap[pillar.icon]}</div>
+              <div className="text-4xl mb-4">{pillar.icon}</div>
               <span className="text-xs font-black tracking-widest uppercase text-teal-500 dark:text-teal-400 mb-2 block">
                 {pillar.label}
               </span>

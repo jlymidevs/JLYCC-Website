@@ -5,18 +5,11 @@ import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 
 const features = [
-  { title: "NON-PROFIT MINISTRY", desc: "SEC Reg No: ******44", icon: "shield" },
-  { title: "BIBLICAL TRUTH", desc: "Uncompromising theological depth", icon: "book" },
-  { title: "GLOBAL MISSION", desc: "Training international students", icon: "globe" },
-  { title: "EXCELLENCE", desc: "Military-grade spiritual discipline", icon: "medal" },
+  { title: "NON-PROFIT MINISTRY", desc: "SEC Reg No: ******44", icon: "🛡️" },
+  { title: "BIBLICAL TRUTH", desc: "Uncompromising theological depth", icon: "📖" },
+  { title: "GLOBAL MISSION", desc: "Training international students", icon: "🌐" },
+  { title: "EXCELLENCE", desc: "Military-grade spiritual discipline", icon: "🏅" },
 ];
-
-const iconMap: Record<string, string> = {
-  shield: "🛡️",
-  book: "📖",
-  globe: "🌐",
-  medal: "🏅",
-};
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
@@ -82,7 +75,7 @@ export default function About() {
                 {features.map(({ title, desc, icon }) => (
                   <li key={title} className="flex items-start gap-3">
                     <div className="w-10 h-10 bg-teal-500/15 border border-teal-500/30 rounded-xl flex items-center justify-center flex-shrink-0 text-lg">
-                      {iconMap[icon]}
+                      {icon}
                     </div>
                     <div>
                       <div className="font-heading font-black text-white text-sm">{title}</div>
