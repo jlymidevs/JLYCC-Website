@@ -55,8 +55,7 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] text-shadow-lg mb-6"
           >
-            <span className="text-white block">JESUS LOVES</span>
-            <span className="text-white block">YOU</span>
+            <span className="text-white block">JESUS LOVES YOU</span>
             <span className="block mt-1">
               <span className="text-teal-400">CITY</span>
               <span className="text-white"> CHURCH</span>
