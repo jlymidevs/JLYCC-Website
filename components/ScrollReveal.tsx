@@ -27,7 +27,8 @@ export function ScrollReveal({
   offset = ["start 0.88", "start 0.2"] as [string, string],
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { scrollYProgress } = useScroll({ target: ref, offset: offset as any });
 
   const opacity = useTransform(scrollYProgress, [0, 0.6], [0, 1]);
 
