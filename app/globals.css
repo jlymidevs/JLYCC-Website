@@ -37,7 +37,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background-color: #000;
+    background-color: #050505;
     color: white;
     font-family: var(--font-inter), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -121,10 +121,10 @@
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--mint-bg); }
-::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--teal-dark); }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.28); }
 
 *:focus-visible {
   outline: 2px solid var(--teal);
