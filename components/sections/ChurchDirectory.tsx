@@ -239,7 +239,7 @@ function RegionCard({ region, index, isOpen, onToggle }: {
           className={`rounded-2xl overflow-hidden border transition-all duration-300 cursor-pointer group
             ${isOpen
               ? "border-teal-400 shadow-xl shadow-teal-500/20"
-              : "border-teal-300/40 dark:border-teal-700/40 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10"
+              : "border-white/15 hover:border-teal-400 hover:shadow-lg hover:shadow-teal-500/10"
             }`}
           style={{ transformStyle: "preserve-3d" }}
           onClick={onToggle}
@@ -286,23 +286,23 @@ function RegionCard({ region, index, isOpen, onToggle }: {
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden bg-white dark:bg-gray-800"
+                className="overflow-hidden bg-white/10 backdrop-blur-md"
               >
-                <div className="max-h-64 overflow-y-auto divide-y divide-gray-50 dark:divide-gray-700/60">
+                <div className="max-h-64 overflow-y-auto divide-y divide-white/10">
                   {region.churches.map((church, ci) => (
                     <motion.div
                       key={church.name}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.2, delay: ci * 0.04 }}
-                      className="px-4 py-3 hover:bg-teal-50/60 dark:hover:bg-teal-900/10 transition-colors"
+                      className="px-4 py-3 hover:bg-white/10 transition-colors"
                     >
                       <div className="flex items-center gap-2 mb-0.5">
                         {church.flag && <span className="text-sm">{church.flag}</span>}
-                        <span className="font-semibold text-gray-900 dark:text-white text-sm leading-snug">{church.name}</span>
+                        <span className="font-semibold text-white text-sm leading-snug">{church.name}</span>
                       </div>
                       {church.pastor && (
-                        <p className="text-teal-500 dark:text-teal-400 text-xs font-medium pl-0.5 italic mb-1">{church.pastor}</p>
+                        <p className="text-teal-300 text-xs font-medium pl-0.5 italic mb-1">{church.pastor}</p>
                       )}
                       <div className="flex items-center gap-3">
                         {church.address && (
@@ -311,7 +311,7 @@ function RegionCard({ region, index, isOpen, onToggle }: {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={e => e.stopPropagation()}
-                            className="text-blue-500 hover:text-blue-700 text-xs flex items-center gap-1 hover:underline"
+                            className="text-blue-400 hover:text-blue-300 text-xs flex items-center gap-1 hover:underline"
                           >
                             <MapPin size={9} /> Map
                           </a>
@@ -322,7 +322,7 @@ function RegionCard({ region, index, isOpen, onToggle }: {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={e => e.stopPropagation()}
-                            className="text-teal-500 hover:text-teal-700 text-xs flex items-center gap-1 hover:underline font-semibold"
+                            className="text-teal-300 hover:text-teal-100 text-xs flex items-center gap-1 hover:underline font-semibold"
                           >
                             <ExternalLink size={9} /> Facebook
                           </a>
@@ -347,30 +347,30 @@ function SearchCard({ church, regionName, index }: { church: Church; regionName:
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.25, delay: index * 0.04 }}
-      className="bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 p-4 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+      className="bg-white/10 backdrop-blur-md rounded-xl border border-white/15 p-4 hover:bg-white/15 hover:-translate-y-0.5 transition-all duration-200"
     >
       <div className="flex items-start justify-between gap-2 mb-1">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-teal-500 mt-1 shrink-0" />
-          <span className="font-bold text-gray-900 dark:text-white text-sm leading-snug">
+          <span className="w-2 h-2 rounded-full bg-teal-400 mt-1 shrink-0" />
+          <span className="font-bold text-white text-sm leading-snug">
             {church.flag && `${church.flag} `}{church.name}
           </span>
         </div>
-        <span className="text-xs font-semibold text-teal-600 bg-teal-50 dark:bg-teal-900/30 dark:text-teal-300 border border-teal-100 dark:border-teal-700 px-2 py-0.5 rounded-full whitespace-nowrap shrink-0">
+        <span className="text-xs font-semibold text-teal-300 bg-teal-500/20 border border-teal-400/30 px-2 py-0.5 rounded-full whitespace-nowrap shrink-0">
           {regionName}
         </span>
       </div>
-      {church.pastor && <p className="text-teal-500 text-xs font-medium mb-1 pl-4 italic">{church.pastor}</p>}
+      {church.pastor && <p className="text-teal-300 text-xs font-medium mb-1 pl-4 italic">{church.pastor}</p>}
       <div className="flex items-center gap-3 pl-4">
         {church.address && (
           <a href={gmapsUrl(church.address)} target="_blank" rel="noopener noreferrer"
-            className="text-blue-500 hover:text-blue-700 text-xs flex items-center gap-1 hover:underline">
+            className="text-blue-400 hover:text-blue-300 text-xs flex items-center gap-1 hover:underline">
             <MapPin size={9} /> Directions
           </a>
         )}
         {church.fb && (
           <a href={church.fb} target="_blank" rel="noopener noreferrer"
-            className="text-teal-500 hover:text-teal-700 text-xs flex items-center gap-1 hover:underline font-semibold">
+            className="text-teal-300 hover:text-teal-100 text-xs flex items-center gap-1 hover:underline font-semibold">
             <ExternalLink size={9} /> Facebook
           </a>
         )}
@@ -411,17 +411,17 @@ export default function ChurchDirectory() {
   return (
     <section
       id="directories"
-      className="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden"
+      className="py-24 relative overflow-hidden"
       aria-labelledby="directory-heading"
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <motion.div
-          className="absolute top-20 left-1/4 w-96 h-96 rounded-full bg-teal-400/5 dark:bg-teal-400/10 blur-3xl"
+          className="absolute top-20 left-1/4 w-96 h-96 rounded-full bg-teal-400/5 blur-3xl"
           animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
-          className="absolute bottom-20 right-1/4 w-80 h-80 rounded-full bg-teal-300/5 dark:bg-teal-500/10 blur-3xl"
+          className="absolute bottom-20 right-1/4 w-80 h-80 rounded-full bg-teal-300/5 blur-3xl"
           animate={{ x: [0, -30, 0], y: [0, 30, 0] }}
           transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         />
@@ -435,17 +435,17 @@ export default function ChurchDirectory() {
           className="text-center mb-10"
         >
           <motion.span
-            className="inline-block text-xs font-black tracking-widest uppercase text-teal-500 mb-2"
+            className="inline-block text-xs font-black tracking-widest uppercase text-teal-400 mb-2"
             initial={{ opacity: 0, letterSpacing: "0.2em" }}
             animate={isInView ? { opacity: 1, letterSpacing: "0.3em" } : {}}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             OUR LOCATIONS
           </motion.span>
-          <h2 id="directory-heading" className="font-heading text-4xl md:text-5xl font-black text-gray-900 dark:text-white mt-2">
+          <h2 id="directory-heading" className="font-heading text-4xl md:text-5xl font-black text-white mt-2">
             CHURCH DIRECTORY
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-white/60 text-lg mt-4 max-w-2xl mx-auto">
             Join a JLYCC family near you - a growing movement spanning the Philippines and the globe.
           </p>
         </motion.div>
@@ -464,14 +464,14 @@ export default function ChurchDirectory() {
               animate={isInView ? "visible" : "hidden"}
               className="relative group"
             >
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-5 text-center shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-5 text-center border border-white/15 hover:bg-white/15 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
-                <div className="font-heading text-3xl font-black text-teal-500 dark:text-teal-400 relative">
+                <div className="font-heading text-3xl font-black text-teal-300 relative">
                   <AnimatedCounter to={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-gray-500 dark:text-gray-400 text-xs font-semibold mt-1 uppercase tracking-wider relative">
+                <div className="text-white/60 text-xs font-semibold mt-1 uppercase tracking-wider relative">
                   {stat.label}
                 </div>
               </div>
@@ -492,7 +492,7 @@ export default function ChurchDirectory() {
           >
             <div className="relative flex-1">
               <motion.div
-                animate={{ color: focused ? "#2aa3b5" : "#9ca3af" }}
+                animate={{ color: focused ? "#2dd4bf" : "rgba(255,255,255,0.4)" }}
                 className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
               >
                 <Search size={18} />
@@ -504,7 +504,7 @@ export default function ChurchDirectory() {
                 onFocus={() => setFocused(true)}
                 onBlur={() => setFocused(false)}
                 placeholder="Search churches, cities, pastors..."
-                className="w-full bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-2xl pl-12 pr-10 py-4 text-gray-800 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 text-sm focus:outline-none focus:border-teal-500 transition-colors shadow-sm"
+                className="w-full bg-white/10 backdrop-blur-md border-2 border-white/20 rounded-2xl pl-12 pr-10 py-4 text-white placeholder-white/40 text-sm focus:outline-none focus:border-teal-400 transition-colors"
                 aria-label="Search church locations"
               />
               <AnimatePresence>
@@ -514,7 +514,7 @@ export default function ChurchDirectory() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.8 }}
                     onClick={() => setSearch("")}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white/40 hover:text-white/80"
                   >
                     <X size={16} />
                   </motion.button>
@@ -538,14 +538,14 @@ export default function ChurchDirectory() {
                 initial={{ opacity: 0, y: -5 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -5 }}
-                className="text-sm text-gray-500 dark:text-gray-400 mt-3 pl-1"
+                className="text-sm text-white/60 mt-3 pl-1"
               >
                 Found{" "}
                 <motion.span
                   key={searchResults.length}
-                  initial={{ scale: 1.3, color: "#2aa3b5" }}
+                  initial={{ scale: 1.3, color: "#2dd4bf" }}
                   animate={{ scale: 1 }}
-                  className="font-bold text-teal-600 dark:text-teal-400"
+                  className="font-bold text-teal-300"
                 >
                   {searchResults.length}
                 </motion.span>{" "}
@@ -577,8 +577,8 @@ export default function ChurchDirectory() {
                   className="text-center py-12"
                 >
                   <div className="text-4xl mb-3">🔍</div>
-                  <p className="text-gray-400 dark:text-gray-500 font-semibold">No churches found for &quot;{search}&quot;</p>
-                  <p className="text-gray-400 dark:text-gray-600 text-sm mt-1">Try a city, region, or pastor name</p>
+                  <p className="text-white/60 font-semibold">No churches found for &quot;{search}&quot;</p>
+                  <p className="text-white/40 text-sm mt-1">Try a city, region, or pastor name</p>
                 </motion.div>
               )}
             </motion.div>
@@ -600,11 +600,11 @@ export default function ChurchDirectory() {
                   transition={{ duration: 0.5, delay: 0.4 }}
                   className="flex items-center gap-3 mb-6"
                 >
-                  <div className="w-9 h-9 bg-teal-500/10 dark:bg-teal-500/20 rounded-xl flex items-center justify-center">
-                    <Globe size={18} className="text-teal-500" />
+                  <div className="w-9 h-9 bg-teal-400/20 rounded-xl flex items-center justify-center">
+                    <Globe size={18} className="text-teal-400" />
                   </div>
-                  <h3 className="font-heading font-black text-gray-800 dark:text-white text-xl">International Churches</h3>
-                  <div className="h-px flex-1 bg-gradient-to-r from-teal-200 dark:from-teal-800 to-transparent" />
+                  <h3 className="font-heading font-black text-white text-xl">International Churches</h3>
+                  <div className="h-px flex-1 bg-gradient-to-r from-teal-400/40 to-transparent" />
                 </motion.div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {internationalRegions.map((region, i) => (
@@ -626,13 +626,13 @@ export default function ChurchDirectory() {
                   transition={{ duration: 0.5, delay: 0.55 }}
                   className="flex items-center gap-3 mb-6"
                 >
-                  <div className="w-9 h-9 bg-teal-500/10 dark:bg-teal-500/20 rounded-xl flex items-center justify-center">
-                    <Flag size={18} className="text-teal-500" />
+                  <div className="w-9 h-9 bg-teal-400/20 rounded-xl flex items-center justify-center">
+                    <Flag size={18} className="text-teal-400" />
                   </div>
-                  <h3 className="font-heading font-black text-gray-800 dark:text-white text-xl">
+                  <h3 className="font-heading font-black text-white text-xl">
                     National Churches <span className="ml-1">🇵🇭</span>
                   </h3>
-                  <div className="h-px flex-1 bg-gradient-to-r from-teal-200 dark:from-teal-800 to-transparent" />
+                  <div className="h-px flex-1 bg-gradient-to-r from-teal-400/40 to-transparent" />
                 </motion.div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {nationalRegions.map((region, i) => (
