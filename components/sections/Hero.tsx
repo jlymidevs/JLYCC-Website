@@ -99,16 +99,19 @@ export default function Hero() {
           </TextBeat>
 
           <TextBeat opacity={dOp} y={dY}>
-            <span className="text-teal-400/90 text-xs tracking-[0.4em] uppercase font-semibold block mb-5 text-center drop-shadow">
-              Jesus Loves You City Church
+            <span className="text-teal-400/90 text-xs tracking-[0.4em] uppercase font-semibold block mb-3 text-center drop-shadow">
+              AMEN / Leadtakers
             </span>
             <h2
               className="text-white/90 font-black tracking-tighter text-center leading-none drop-shadow-2xl"
               style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}
             >
-              BE PART OF IT
+              MISSION
             </h2>
-            <p className="text-white/60 text-sm md:text-lg mt-4 text-center font-light drop-shadow">
+            <p className="text-white/60 text-base md:text-xl mt-3 text-center tracking-widest uppercase font-light drop-shadow">
+              Be Part of It
+            </p>
+            <p className="text-white/50 text-sm md:text-lg mt-3 text-center font-light drop-shadow">
               Join us. Come as you are. Leave transformed.
             </p>
             <a
