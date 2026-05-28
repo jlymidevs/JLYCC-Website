@@ -127,9 +127,7 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="rounded-2xl overflow-hidden h-full min-h-[400px] relative border border-white/10 group">
-              {/* Styled map placeholder using visual design */}
               <div className="w-full h-full bg-navy-800 relative overflow-hidden">
-                {/* Map-like grid */}
                 <div
                   className="absolute inset-0 opacity-20"
                   style={{
@@ -141,7 +139,6 @@ export default function Contact() {
                   }}
                   aria-hidden="true"
                 />
-                {/* Road-like lines */}
                 <div className="absolute inset-0" aria-hidden="true">
                   <div className="absolute top-1/3 left-0 right-0 h-8 bg-white/5" />
                   <div className="absolute top-2/3 left-0 right-0 h-5 bg-white/3" />
@@ -149,7 +146,6 @@ export default function Contact() {
                   <div className="absolute left-2/3 top-0 bottom-0 w-5 bg-white/3" />
                 </div>
 
-                {/* Map pin */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                   <motion.div
                     animate={{ y: [0, -8, 0] }}
@@ -168,7 +164,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Overlay CTA */}
                 <div className="absolute bottom-5 right-5">
                   <a
                     href="https://maps.app.goo.gl/rFzpPBUutEK7pqXg6"
