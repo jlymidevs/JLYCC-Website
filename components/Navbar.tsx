@@ -61,15 +61,16 @@ export default function Navbar() {
     >
       <div className="container-section">
         <nav className="flex items-center justify-between" aria-label="Main navigation">
+          {/* Logo */}
           <a href="/" className="flex items-center gap-2.5 group" aria-label="JLYCC Home">
-            <div className="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center font-heading font-black text-white text-sm transition-transform group-hover:scale-110">
-              JL
-            </div>
-            <div className="hidden sm:block">
-              <span className="block font-heading text-sm font-black text-white leading-none">JESUS LOVES YOU</span>
-              <span className="block font-heading text-xs font-bold text-teal-400 tracking-widest uppercase leading-none mt-0.5">City Church</span>
-            </div>
+            <img
+              src="https://assets.cdn.filesafe.space/DiD7LkE8KQEe9zWMUJl5/media/6a1842398c6ee94929b286b4.png"
+              alt="JLYCC Logo"
+              className="h-10 w-auto transition-transform group-hover:scale-110"
+            />
           </a>
+
+          {/* Desktop Nav */}
           <ul className="hidden md:flex items-center gap-1" role="list">
             {navLinks.map((link) => (
               <li key={link.label} className="relative">
@@ -107,9 +108,15 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
+          {/* CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <a href="#stay-updated" className="btn-primary-dark text-sm px-5 py-2.5">CONNECT</a>
+            <a href="#stay-updated" className="btn-primary-dark text-sm px-5 py-2.5">
+              CONNECT
+            </a>
           </div>
+
+          {/* Mobile Toggle */}
           <button
             className="md:hidden p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 transition-colors"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -119,6 +126,8 @@ export default function Navbar() {
           </button>
         </nav>
       </div>
+
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -146,7 +155,9 @@ export default function Navbar() {
                 </div>
               ))}
               <div className="mt-3 pt-3 border-t border-white/10">
-                <a href="#stay-updated" className="btn-primary w-full justify-center text-sm" onClick={() => setMobileOpen(false)}>CONNECT</a>
+                <a href="#stay-updated" className="btn-primary w-full justify-center text-sm" onClick={() => setMobileOpen(false)}>
+                  CONNECT
+                </a>
               </div>
             </nav>
           </motion.div>
