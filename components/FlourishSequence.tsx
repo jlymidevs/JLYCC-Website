@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useScroll, useSpring, useTransform, motion } from "framer-motion";
+import { useScroll, useSpring, useTransform, motion, MotionValue } from "framer-motion";
 
 const FRAME_COUNT = 16;
 const FRAME_PATH = (i: number) => `/sequence/frame_${i}.jpg`;
@@ -13,8 +13,8 @@ function TextBeat({
   className = "",
 }: {
   children: React.ReactNode;
-  opacity: ReturnType<typeof useTransform>;
-  y: ReturnType<typeof useTransform>;
+  opacity: MotionValue<number>;
+  y: MotionValue<number>;
   className?: string;
 }) {
   return (
@@ -105,7 +105,6 @@ export default function FlourishSequence() {
       const iw = img.naturalWidth;
       const ih = img.naturalHeight;
 
-      // "contain" fit — preserve aspect ratio, fill canvas
       const scale = Math.max(cw / iw, ch / ih);
       const sw = iw * scale;
       const sh = ih * scale;
@@ -139,7 +138,6 @@ export default function FlourishSequence() {
       }
     });
 
-    // Draw first frame
     drawFrame(0);
 
     return () => {
