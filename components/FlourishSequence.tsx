@@ -105,6 +105,7 @@ export default function FlourishSequence() {
       const iw = img.naturalWidth;
       const ih = img.naturalHeight;
 
+      // "contain" fit — preserve aspect ratio, fill canvas
       const scale = Math.max(cw / iw, ch / ih);
       const sw = iw * scale;
       const sh = ih * scale;
@@ -138,6 +139,7 @@ export default function FlourishSequence() {
       }
     });
 
+    // Draw first frame
     drawFrame(0);
 
     return () => {
@@ -179,17 +181,15 @@ export default function FlourishSequence() {
             style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.6s ease" }}
           />
 
-          {/* Beat A — FLOURISH 2026 centered hero */}
+          {/* Beat A — JESUS LOVES YOU / CITY CHURCH centered hero */}
           <TextBeat opacity={beatAOpacity} y={beatAY}>
             <h1
               className="text-white/90 font-black tracking-tighter text-center leading-none"
               style={{ fontSize: "clamp(3.5rem, 10vw, 9rem)" }}
             >
-              FLOURISH
+              JESUS LOVES YOU
               <br />
-              <span className="text-white/40" style={{ fontSize: "0.45em", letterSpacing: "0.4em" }}>
-                2026
-              </span>
+              CITY CHURCH
             </h1>
             <p className="text-white/50 text-base md:text-xl mt-6 tracking-widest uppercase font-light text-center">
               A gathering that changes everything
