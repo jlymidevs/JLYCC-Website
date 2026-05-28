@@ -10,15 +10,12 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       aria-label="Hero section"
     >
-      {/* Dark overlay over the global fixed video */}
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
 
-      {/* Watermark */}
       <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden pointer-events-none select-none" aria-hidden="true">
         <span className="font-heading text-[20vw] font-black text-white/[0.03] leading-none tracking-tighter">JLYCC</span>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container-section pt-32 pb-20">
         <div className="max-w-4xl">
           <motion.div
@@ -96,7 +93,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}

@@ -21,7 +21,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Jesus Loves You City Church – A Legacy of Spiritual Authority",
+  title: "Jesus Loves You City Church - A Legacy of Spiritual Authority",
   description:
     "Join us at Jesus Loves You City Church. Experience Spirit-filled worship, life-changing community, and a mission to transform lives across our city and beyond.",
   keywords: ["church", "non-profit", "worship", "community", "faith", "city church"],
@@ -42,7 +42,6 @@ export default function RootLayout({
       >
         <ThemeProvider>
         <VideoBackground />
-        {/* Skip to main content for accessibility */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-crimson-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold"
@@ -54,7 +53,6 @@ export default function RootLayout({
         {children}
         <ScrollToTop />
         <FloatingLiveButton />
-        {/* GHL AI Chat Widget */}
         <Script
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
