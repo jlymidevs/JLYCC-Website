@@ -42,7 +42,7 @@ export default function Donate() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="donate" className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden" aria-labelledby="donate-heading">
+    <section id="donate" className="py-24 relative overflow-hidden" aria-labelledby="donate-heading">
       <div className="container-section" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -55,7 +55,7 @@ export default function Donate() {
           <h2 id="donate-heading" className="section-title mt-2">
             Support Our <span className="text-teal-500 dark:text-teal-400">Non-Profit Mission</span>
           </h2>
-          <p className="text-dark/60 dark:text-white/60 text-lg mt-5 max-w-2xl mx-auto">
+          <p className="text-white/70 text-lg mt-5 max-w-2xl mx-auto">
             Jesus Loves You Ministries, Inc. operates as a registered non-profit organization. We rely on the faithful partnership of believers to fund scholarships, expand our facilities, and send missionaries worldwide.
           </p>
         </motion.div>
@@ -71,7 +71,7 @@ export default function Donate() {
             { icon: CheckCircle, label: "SEC-registered non-profit" },
             { icon: CheckCircle, label: "All proceeds support ministry outreach & community care" },
           ].map(({ icon: Icon, label }) => (
-            <div key={label} className="flex items-center gap-2 text-dark/50 dark:text-white/50 text-sm font-semibold">
+            <div key={label} className="flex items-center gap-2 text-white/60 text-sm font-semibold">
               <Icon size={15} className="text-teal-500" />
               {label}
             </div>
@@ -98,7 +98,7 @@ export default function Donate() {
                   <Icon size={26} className={tier.highlight ? "text-white" : tier.color} />
                 </div>
                 <h3 className={`font-heading text-xl font-black mb-4 ${tier.highlight ? "text-white" : "text-dark dark:text-white"}`}>{tier.title}</h3>
-                <p className={`text-sm leading-relaxed mb-8 ${tier.highlight ? "text-white/80" : "text-dark/60 dark:text-white/60"}`}>{tier.desc}</p>
+                <p className={`text-sm leading-relaxed mb-8 ${tier.highlight ? "text-white/80" : "text-white/70"}`}>{tier.desc}</p>
                 <a
                   href="#stay-updated"
                   className={`w-full flex items-center justify-center gap-2 font-bold text-sm py-3 px-5 rounded-xl transition-all ${tier.btnClass}`}
@@ -120,7 +120,7 @@ export default function Donate() {
             MAKE A DONATION
             <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
           </a>
-          <p className="text-dark/40 dark:text-white/40 text-sm mt-4">
+          <p className="text-white/50 text-sm mt-4">
             All donations directed to our SEC-registered non-profit.
           </p>
         </motion.div>

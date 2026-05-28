@@ -26,7 +26,7 @@ export default function Leadership() {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="leadership" className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden" aria-labelledby="leadership-heading">
+    <section id="leadership" className="py-24 relative overflow-hidden" aria-labelledby="leadership-heading">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-teal-50 dark:bg-teal-900/10 rounded-full blur-3xl opacity-60" />
       </div>
@@ -43,7 +43,7 @@ export default function Leadership() {
           <h2 id="leadership-heading" className="section-title mt-2">
             Leadership <span className="text-teal-500 dark:text-teal-400">Credibility</span>
           </h2>
-          <p className="text-dark/60 dark:text-white/60 text-lg mt-5 max-w-2xl mx-auto">
+          <p className="text-white/70 text-lg mt-5 max-w-2xl mx-auto">
             Guided by seasoned ministers and professionals who embody the pioneer spirit and unwavering commitment to the Great Commission.
           </p>
         </motion.div>

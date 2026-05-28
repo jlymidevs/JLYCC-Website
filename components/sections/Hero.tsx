@@ -10,12 +10,7 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       aria-label="Hero section"
     >
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
-
-      <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden pointer-events-none select-none" aria-hidden="true">
-        <span className="font-heading text-[20vw] font-black text-white/[0.03] leading-none tracking-tighter">JLYCC</span>
-      </div>
-
+      {/* Content */}
       <div className="relative z-10 container-section pt-32 pb-20">
         <div className="max-w-4xl">
           <motion.div
@@ -39,13 +34,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] text-shadow-lg mb-6"
+            className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-none text-shadow-lg mb-6"
           >
-            <span className="text-white block">JESUS LOVES YOU</span>
-            <span className="block mt-1">
-              <span className="text-teal-400">CITY</span>
-              <span className="text-white"> CHURCH</span>
-            </span>
+            <span className="text-white">JESUS LOVES YOU </span><span className="text-teal-400">CITY </span><span className="text-white">CHURCH</span>
           </motion.h1>
 
           <motion.p
@@ -93,6 +84,7 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Scroll indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}

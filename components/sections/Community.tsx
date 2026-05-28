@@ -15,7 +15,7 @@ const ministries = [
   {
     name: "KINGDOM KIDS",
     sub: "Ages 4–13",
-    desc: "A fun environment for children to learn about God’s love. Stay updated through our Facebook page.",
+    desc: "A fun environment for children to learn about God's love. Stay updated through our Facebook page.",
     href: "https://www.facebook.com/JLYCCKingdomKids",
     img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=400&q=80",
   },
@@ -40,7 +40,7 @@ export default function Community() {
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section id="community" className="py-24 bg-muted dark:bg-gray-800 relative overflow-hidden" aria-labelledby="community-heading">
+    <section id="community" className="py-24 relative overflow-hidden" aria-labelledby="community-heading">
       <div className="container-section" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -53,7 +53,7 @@ export default function Community() {
           <h2 id="community-heading" className="section-title mt-2">
             Follow <span className="text-teal-500 dark:text-teal-400">Us</span>
           </h2>
-          <p className="text-dark/60 dark:text-white/60 text-lg mt-4 max-w-2xl mx-auto">
+          <p className="text-white/70 text-lg mt-4 max-w-2xl mx-auto">
             Follow us on our platforms and stay plugged into the life of the church — from anywhere in the world.
           </p>
         </motion.div>
@@ -73,7 +73,7 @@ export default function Community() {
               <div className="p-5">
                 <h3 className="font-heading font-black text-dark dark:text-white text-base">{m.name}</h3>
                 <p className="text-teal-500 dark:text-teal-400 text-xs font-bold mb-2">{m.sub}</p>
-                <p className="text-dark/60 dark:text-white/60 text-sm leading-relaxed mb-4">{m.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed mb-4">{m.desc}</p>
                 <a
                   href={m.href}
                   target="_blank"

@@ -37,18 +37,17 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background-color: var(--mint-bg);
-    color: var(--dark);
+    background-color: #000;
+    color: white;
     font-family: var(--font-inter), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-montserrat), system-ui, sans-serif;
     font-weight: 800;
     line-height: 1.1;
-    color: var(--dark);
+    color: white;
   }
 
   ::selection {
@@ -79,11 +78,11 @@
   }
 
   .section-label {
-    @apply inline-block text-teal-500 dark:text-teal-400 font-bold text-xs tracking-widest uppercase mb-2;
+    @apply inline-block text-teal-400 font-bold text-xs tracking-widest uppercase mb-2;
   }
 
   .section-title {
-    @apply font-heading text-4xl md:text-5xl font-black leading-tight text-dark dark:text-white;
+    @apply font-heading text-4xl md:text-5xl font-black leading-tight text-white;
   }
 
   .card-light {

@@ -8,9 +8,8 @@ const pillars = [
     label: "WIND NETWORK",
     title: "WORSHIP",
     quote: '"Loving God causes us to WORSHIP Him"',
-    desc: "Worship is not a destination but a journey - deepening as we grow in our knowledge and experience of God.",
+    desc: "Worship is not a destination but a journey — deepening as we grow in our knowledge and experience of God.",
     features: ["Ministerial service in the temple"],
-    featured: false,
     icon: "🙏",
   },
   {
@@ -28,7 +27,6 @@ const pillars = [
     quote: '"Loving the world causes us to do MISSIONS"',
     desc: "Evangelism & Missions. Focused on reaching the 7 Mountains of Society and expanding our territory globally.",
     features: ["Reaching the 7 Mountains of Society"],
-    featured: false,
     icon: "🌍",
   },
 ];
@@ -38,7 +36,7 @@ export default function Pillars() {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="pillars" className="py-24 bg-muted dark:bg-gray-900 relative overflow-hidden" aria-labelledby="pillars-heading">
+    <section id="pillars" className="py-24 relative overflow-hidden" aria-labelledby="pillars-heading">
       <div className="container-section relative">
         <motion.div
           ref={ref}
@@ -53,7 +51,7 @@ export default function Pillars() {
           <h2 id="pillars-heading" className="section-title mt-2">
             Our <span className="text-teal-500 dark:text-teal-400">Three Pillars</span>
           </h2>
-          <p className="text-dark/60 dark:text-white/60 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/70 text-lg mt-5 max-w-2xl mx-auto leading-relaxed">
             The Jesus Loves You City Church exists to provide a place to come before God in worship; committed to disciples who demonstrate our faith; and establish churches all over the world.
           </p>
         </motion.div>
@@ -77,11 +75,11 @@ export default function Pillars() {
                 {pillar.label}
               </span>
               <h3 className="font-heading text-2xl font-black text-teal-700 dark:text-teal-300 mb-3">{pillar.title}</h3>
-              <p className="text-dark/60 dark:text-white/50 text-sm italic mb-3">{pillar.quote}</p>
-              <p className="text-dark/60 dark:text-white/60 text-sm leading-relaxed mb-5">{pillar.desc}</p>
+              <p className="text-white/60 text-sm italic mb-3">{pillar.quote}</p>
+              <p className="text-white/70 text-sm leading-relaxed mb-5">{pillar.desc}</p>
               <ul className="space-y-1.5">
                 {pillar.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-sm text-dark/70 dark:text-white/60">
+                  <li key={f} className="flex items-center gap-2 text-sm text-white/70">
                     <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0" />
                     {f}
                   </li>

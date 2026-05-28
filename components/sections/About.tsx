@@ -16,10 +16,11 @@ export default function About() {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="about" className="py-24 bg-dark relative overflow-hidden" aria-labelledby="about-heading">
+    <section id="about" className="py-24 relative overflow-hidden" aria-labelledby="about-heading">
 
       <div className="container-section">
         <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -50, filter: "blur(12px)" }}
             animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}}
@@ -51,6 +52,7 @@ export default function About() {
             </motion.div>
           </motion.div>
 
+          {/* Text */}
           <motion.div
             initial={{ opacity: 0, x: 50, filter: "blur(12px)" }}
             animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}}

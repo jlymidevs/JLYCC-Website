@@ -16,7 +16,7 @@ export default function Services() {
   const isInView = useInView(ref, { once: true, amount: 0.15 });
 
   return (
-    <section id="services" className="py-24 bg-white dark:bg-gray-900 relative overflow-hidden" aria-labelledby="services-heading">
+    <section id="services" className="py-24 relative overflow-hidden" aria-labelledby="services-heading">
       <div className="container-section" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -29,10 +29,10 @@ export default function Services() {
           <h2 id="services-heading" className="section-title mt-2">
             SUNDAY <span className="text-teal-500 dark:text-teal-400">SERVICE</span>
           </h2>
-          <p className="text-dark/60 dark:text-white/60 text-lg mt-5 max-w-xl mx-auto">
+          <p className="text-white/70 text-lg mt-5 max-w-xl mx-auto">
             Experience our latest message and join us every Sunday for live worship and teaching.
           </p>
-          <p className="text-dark/40 dark:text-white/40 text-sm mt-1">JLYMI Central Sunday Service</p>
+          <p className="text-white/50 text-sm mt-1">JLYMI Central Sunday Service</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-10 items-start">
@@ -108,7 +108,7 @@ export default function Services() {
                   </div>
                   <span className="text-xs text-teal-600 dark:text-teal-300 font-bold bg-teal-50 dark:bg-teal-900/30 px-2.5 py-0.5 rounded-full">{item.note}</span>
                 </div>
-                <p className="text-dark/40 dark:text-white/40 text-xs pl-9">{item.desc}</p>
+                <p className="text-white/50 text-xs pl-9">{item.desc}</p>
                 <p className="text-dark/70 dark:text-white/70 text-sm pl-9 font-semibold mt-0.5">{item.times}</p>
               </motion.div>
             ))}
