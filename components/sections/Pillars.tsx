@@ -16,8 +16,8 @@ const pillars = [
     label: "EAGLES NETWORK",
     title: "DISCIPLESHIP",
     quote: '"Loving the brethren causes us to DISCIPLE"',
-    desc: "Generational Discipleship. Focused on raising up the next generation of leaders through HeartLink, ISU, and Children’s ministries.",
-    features: ["HeartLink", "ISU", "Children’s ministries"],
+    desc: "Generational Discipleship. Focused on raising up the next generation of leaders through HeartLink, ISU, and Children's ministries.",
+    features: ["HeartLink", "ISU", "Children's ministries"],
     featured: true,
     icon: "🦅",
   },
@@ -40,9 +40,10 @@ export default function Pillars() {
       <div className="container-section relative">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          style={{ willChange: "transform, opacity, filter" }}
           className="text-center mb-16"
         >
           <span className="section-label">Vision Summary</span>
@@ -59,9 +60,10 @@ export default function Pillars() {
           {pillars.map((pillar, i) => (
             <motion.article
               key={pillar.label}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.15 }}
+              initial={{ opacity: 0, y: 50, scale: 0.96, filter: "blur(8px)" }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" } : {}}
+              transition={{ duration: 0.65, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              style={{ willChange: "transform, opacity, filter" }}
               className={`rounded-2xl border-2 p-8 hover:-translate-y-2 transition-all duration-300 hover:shadow-lg ${
                 pillar.featured
                   ? "border-teal-400 bg-white dark:bg-gray-800 ring-2 ring-teal-400/30"

@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 const features = [
   { title: "NON-PROFIT MINISTRY", desc: "SEC Reg No: ******44", icon: "🛡️" },
-  { title: "BIBLICAL TRUTH", desc: "Uncompromising theological depth", icon: "📎" },
+  { title: "BIBLICAL TRUTH", desc: "Uncompromising theological depth", icon: "📖" },
   { title: "GLOBAL MISSION", desc: "Training international students", icon: "🌐" },
   { title: "EXCELLENCE", desc: "Military-grade spiritual discipline", icon: "🏅" },
 ];
@@ -22,9 +22,10 @@ export default function About() {
         <div ref={ref} className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: -50, filter: "blur(12px)" }}
+            animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            style={{ willChange: "transform, opacity, filter" }}
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
@@ -53,9 +54,10 @@ export default function About() {
 
           {/* Text */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, x: 50, filter: "blur(12px)" }}
+            animate={isInView ? { opacity: 1, x: 0, filter: "blur(0px)" } : {}}
+            transition={{ duration: 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+            style={{ willChange: "transform, opacity, filter" }}
           >
             <span className="inline-block text-xs font-black tracking-widest uppercase text-teal-400 border border-teal-500/40 bg-teal-500/10 rounded-full px-4 py-1.5 mb-4">
               ABOUT THE MINISTRY

@@ -7,22 +7,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-dark"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
       aria-label="Hero section"
     >
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          src="https://assets.cdn.filesafe.space/DiD7LkE8KQEe9zWMUJl5/media/6a09f496c56db4013f8c0e5f.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          aria-hidden="true"
-          className="w-full h-full object-cover object-center opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/70 to-dark" />
-      </div>
+      {/* Dark overlay over the global fixed video */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
 
       {/* Watermark */}
       <div className="absolute inset-0 flex items-center justify-center z-0 overflow-hidden pointer-events-none select-none" aria-hidden="true">
