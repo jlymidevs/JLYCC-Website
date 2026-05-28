@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import { useScroll, useTransform, motion, MotionValue, ScrollOffset } from "framer-motion";
 
 type Direction = "up" | "down" | "left" | "right" | "none";
 
@@ -12,8 +12,7 @@ interface ScrollRevealProps {
   blur?: boolean;
   scale?: boolean;
   className?: string;
-  /** offset: [enter, exit] as viewport fractions, default ["start 0.88", "start 0.2"] */
-  offset?: [string, string];
+  offset?: ScrollOffset;
 }
 
 export function ScrollReveal({
@@ -23,7 +22,7 @@ export function ScrollReveal({
   blur = false,
   scale = false,
   className,
-  offset = ["start 0.88", "start 0.2"],
+  offset = ["start 0.88", "start 0.2"] as ScrollOffset,
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset });
