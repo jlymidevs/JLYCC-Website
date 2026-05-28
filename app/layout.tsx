@@ -6,6 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import FloatingLiveButton from "@/components/FloatingLiveButton";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import VideoBackground from "@/components/VideoBackground";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${inter.variable} ${montserrat.variable} font-sans antialiased`}
       >
         <ThemeProvider>
+        <VideoBackground />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:bg-crimson-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:font-bold"
