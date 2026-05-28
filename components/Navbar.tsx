@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   {
@@ -110,7 +111,8 @@ export default function Navbar() {
           </ul>
 
           {/* CTA */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2">
+            <ThemeToggle />
             <a href="#stay-updated" className="btn-primary-dark text-sm px-5 py-2.5">
               CONNECT
             </a>

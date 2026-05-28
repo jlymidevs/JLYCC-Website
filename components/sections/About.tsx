@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 const features = [
   { title: "NON-PROFIT MINISTRY", desc: "SEC Reg No: ******44", icon: "🛡️" },
-  { title: "BIBLICAL TRUTH", desc: "Uncompromising theological depth", icon: "📖" },
+  { title: "BIBLICAL TRUTH", desc: "Uncompromising theological depth", icon: "📎" },
   { title: "GLOBAL MISSION", desc: "Training international students", icon: "🌐" },
   { title: "EXCELLENCE", desc: "Military-grade spiritual discipline", icon: "🏅" },
 ];

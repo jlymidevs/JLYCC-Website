@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -49,6 +50,7 @@ const config: Config = {
           700: "#112129",
         },
         accent: "#b83575",
+        // keep navy/crimson for hero dark section
         navy: {
           950: "#040d1a",
           900: "#071428",
